@@ -1,12 +1,11 @@
+
 from kafka import KafkaProducer
 from pyspark.sql import SQLContext , SparkSession
 from pyspark.sql import functions as f
 import time
-import boto3
-import pandas as pd
 
 spark = SparkSession.builder.master("local[*]").getOrCreate()
-producer = KafkaProducer(bootstrap_servers=['localhost:9092'])
+producer = KafkaProducer(bootstrap_servers=['172.31.29.144:9092'])
 
 sc = spark.sparkContext
 sqlContext = SQLContext(sc)
