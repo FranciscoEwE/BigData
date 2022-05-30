@@ -39,9 +39,4 @@ writer = query \
     .outputMode("complete") \
     .format("console") \
     .start().awaitTermination()
-
-if(lines.value<minimo) :
-     sendMailAlert()
-    
-elif(lines.value>maximo) :
-     sendMailAlert()
+df2.write.option("header","true").csv("s3://parcial3bigdata/DatosAvg/")
